@@ -1,10 +1,13 @@
 @import './header.css';
-
-html,body{
-  margin:0;padding: 0;
+@import './list-title.css';
+@import './container.css';
+@import './todo-list.css';
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
-body{
+
+body {
   background-color: #CDCDCD;
 }
-
-

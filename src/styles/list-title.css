@@ -1,0 +1,21 @@
+.list-title {
+  display: block;
+  overflow: hidden;
+}
+
+.list-title .title {
+  float: left;
+}
+
+.list-title .count {
+  float: right;
+  margin-top: 5px;
+  padding: 0 5px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+  background-color: #E6E6FA;
+  border-radius: 20px;
+}
