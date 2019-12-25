@@ -18,8 +18,12 @@ interface Iprops {
                 <ul className="todo-list-box">
                     {
                         this.props.list.map(todo =>{
+                            let className = 'todo-item'
+                            if(todo.isFinish){
+                                className += ' finish'
+                            }
                             return (
-                                <li className="todo-item"  key={todo.id}>
+                                <li  className={ className }  key={todo.id}>
                                     <input
                                         type="checkbox"
                                         checked={todo.isFinish}

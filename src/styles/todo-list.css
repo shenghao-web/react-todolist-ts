@@ -5,8 +5,20 @@
 }
 
 .todo-list-box .todo-item {
+  margin-bottom: 10px;
   line-height: 32px;
   border-radius: 3px;
   border-left: 5px solid #629A9C;
   background: #fff;
+}
+
+.todo-list-box .todo-item input{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.todo-list-box .todo-item.finish{
+  border-left: 5px solid #999;
+  opacity: 0.6;
 }

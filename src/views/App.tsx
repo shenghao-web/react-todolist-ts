@@ -17,16 +17,18 @@ interface IState {
   todoList: Array<Todo>
 }
 
-export default class App extends React.Component<Iprops,IState>{
+export default class App extends React.Component<Iprops,IState>{      
   state = {
     inputValue: '',
     todoList: []
   }
+  // 输入事件
   handleInputValueChange = (inputValue:string) => {
     this.setState({
       inputValue
     })
   }
+  // enter事件
   handleKeyEnter = () => {
     if(!this.state.inputValue) return
     const todo = { id: new Date().getTime(), name: this.state.inputValue, isFinish: false }
@@ -35,12 +37,14 @@ export default class App extends React.Component<Iprops,IState>{
       inputValue: ''
     })
   }
+  // 改变状态事件
   handleChangeTodoState = (id: number) => () =>{
     const index:number = this.state.todoList.findIndex((item:Todo) => item.id === id)
-    const target:Todo = this.state.todoList[index] as Todo
+    if(index === -1) return
+    const target:Todo = this.state.todoList[index]
     target.isFinish = !target.isFinish
-    index !== 1 && this.setState({
-      todoList: this.state.todoList.fill(target,index,index+1)
+    this.setState({
+      // todoList: this.state.todoList.fill(target,index,index + 1)
     })
   }
   render(){
