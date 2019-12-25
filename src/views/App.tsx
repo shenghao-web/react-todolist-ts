@@ -14,7 +14,7 @@ interface Iprops {}
 
 interface IState {
   inputValue: string,
-  todoList: Array<Todo>
+  todoList: Todo[]
 }
 
 export default class App extends React.Component<Iprops,IState>{      
@@ -43,8 +43,9 @@ export default class App extends React.Component<Iprops,IState>{
     if(index === -1) return
     const target:Todo = this.state.todoList[index]
     target.isFinish = !target.isFinish
+    const arr:Array<Todo> = this.state.todoList
     this.setState({
-      // todoList: this.state.todoList.fill(target,index,index + 1)
+      todoList: arr.fill(target,index,index + 1)
     })
   }
   render(){
